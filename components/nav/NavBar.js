@@ -25,6 +25,12 @@ function AppNavBar() {
             <Link passHref href="/users">
               <Nav.Link>User Management</Nav.Link>
             </Link>
+            <Link passHref href="/category-manager">
+              <Nav.Link>Category Manager</Nav.Link>
+            </Link>
+            <Link passHref href="/tag-manager">
+              <Nav.Link>Tag Manager</Nav.Link>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
