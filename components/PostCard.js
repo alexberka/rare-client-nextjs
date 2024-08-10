@@ -28,14 +28,16 @@ export default function PostCard({ postObj }) {
     <div>
       <Card style={{ width: '18rem' }}>
         <Card.Body>
-          <Card.Title>{postObj.title}</Card.Title>
+          <Link href={`/post/${postObj.id}`} passHref>
+            <Card.Title style={{ cursor: 'pointer' }}>{postObj.title}</Card.Title>
+          </Link>
           <Card.Subtitle className="mb-2 text-muted">
             {user?.firstName} {user?.lastName}
           </Card.Subtitle>
           <Card.Text>{category?.label}</Card.Text>
           <Card.Text>{postObj.publicationDate}</Card.Text>
           <div className="d-flex flex-column align-items-center ml-auto">
-            <Link href="/" passHref>
+            <Link href={`/post/edit/${postObj.id}`} passHref>
               <Button
                 style={{
                   backgroundColor: '#90a955',
@@ -71,5 +73,6 @@ PostCard.propTypes = {
     categoryId: PropTypes.number,
     title: PropTypes.string,
     publicationDate: PropTypes.string,
+    id: PropTypes.number,
   }).isRequired,
 };
