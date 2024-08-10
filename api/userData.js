@@ -1,4 +1,29 @@
 import clientCredentials from '../utils/data/client';
 
-// eslint-disable-next-line no-unused-vars
 const endpoint = clientCredentials.databaseURL;
+
+const getUsers = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/users`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+const getUserById = (id) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/users/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+export { getUsers, getUserById };
