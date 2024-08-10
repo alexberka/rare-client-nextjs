@@ -62,9 +62,13 @@ function Home() {
           </div>
         ))}
       </DropdownButton>
-      {posts.map((post) => (
-        <PostCard key={post.id} postObj={post} />
-      ))}
+      { posts.length <= 0 ? (
+        <p>No Posts Available</p>
+      ) : (
+        posts.map((post) => (
+          <PostCard key={post.id} postObj={post} />
+        ))
+      )}
     </div>
   );
 }
