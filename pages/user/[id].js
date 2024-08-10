@@ -44,7 +44,7 @@ export default function UserDetails() {
       </Table>
       <div>
         {userPosts.map((post) => (
-          <PostCard key={post.id} postObj={post} onupdate={getPostsByUsers} />
+          <PostCard key={post.id} postObj={post} onUpdate={getPostsByUsers} />
         ))}
       </div>
     </>

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Button from 'react-bootstrap/Button';
 import { getUserById } from '../api/userData';
 import { getSingleCategory } from '../api/categoryData';
+import { deletePost } from '../api/postData';
 
 export default function PostCard({ postObj, onUpdate }) {
   const [user, setUser] = useState(null);
@@ -20,7 +21,7 @@ export default function PostCard({ postObj, onUpdate }) {
 
   const deleteThisPost = () => {
     if (window.confirm('Delete?')) {
-      deleteThisPost(postObj.id).then(() => onUpdate());
+      deletePost(postObj.id).then(() => onUpdate());
     }
   };
 
