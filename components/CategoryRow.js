@@ -1,22 +1,16 @@
-// import { propTypes } from 'react-bootstrap/esm/Image';
+import { PropTypes } from 'prop-types';
 
-// export default function CategoryRow({ categoryObj, onUpdate }) {
-//   return (
-//     <tr>
-//       <th>{categoryObj.name}</th>
-//       <td>
-//         <button type="submit" className="btn btn-outline btn-accent btn-xs" onClick={removeThisCondition}>
-//           REMOVE
-//         </button>
-//       </td>
-//     </tr>
-//   );
-// }
+export default function CategoryRow({ categoryObj }) {
+  return (
+    <tr>
+      <th>{categoryObj.label}</th>
+    </tr>
+  );
+}
 
-// CategoryRow.propTypes = {
-//   categoryObj: propTypes.shape({
-//     name: propTypes.string,
-//     firebaseKey: propTypes.string,
-//   }).isRequired,
-//   onUpdate: propTypes.func.isRequired,
-// };
+CategoryRow.propTypes = {
+  categoryObj: PropTypes.shape({
+    label: PropTypes.string,
+    id: PropTypes.number,
+  }).isRequired,
+};
