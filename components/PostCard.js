@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import { getUserById } from '../api/userData';
 import { getSingleCategory } from '../api/categoryData';
 
-export default function PostCard({ postObj }) {
+export default function PostCard({ postObj, onUpdate }) {
   const [user, setUser] = useState(null);
   const [category, setCategory] = useState(null);
 
@@ -16,6 +16,12 @@ export default function PostCard({ postObj }) {
 
   const getCategory = () => {
     getSingleCategory(postObj.categoryId).then(setCategory);
+  };
+
+  const deleteThisPost = () => {
+    if (window.confirm('Delete?')) {
+      deleteThisPost(postObj.id).then(() => onUpdate());
+    }
   };
 
   useEffect(() => {
@@ -57,6 +63,7 @@ export default function PostCard({ postObj }) {
                 width: '100%',
               }}
               className="m-2"
+              onClick={deleteThisPost}
             >
               🗑️
             </Button>
@@ -75,4 +82,5 @@ PostCard.propTypes = {
     publicationDate: PropTypes.string,
     id: PropTypes.number,
   }).isRequired,
+  onUpdate: PropTypes.func.isRequired,
 };

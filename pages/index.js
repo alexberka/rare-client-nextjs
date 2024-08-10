@@ -73,7 +73,7 @@ function Home() {
         <p>No Posts Available</p>
       ) : (
         posts.map((post) => (
-          <PostCard key={post.id} postObj={post} />
+          <PostCard key={post.id} postObj={post} onUpdate={getAllPost} />
         ))
       )}
     </div>
