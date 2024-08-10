@@ -2,6 +2,69 @@ import clientCredentials from '../utils/data/client';
 
 const endpoint = clientCredentials.databaseURL;
 
+	
+//GET ALL POST x
+export const getPosts = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/posts`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  })
+  .then((response) => response.json())
+  .then((data) => resolve(data))
+  .catch(reject);
+});
+//GET POST BY ID x
+export const getSinglePost = (id) => new Promise ((resolve, reject) => {
+  fetch(`${endpoint}/posts/${id}`, {
+    method: "GET", 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  })
+  .then((response) => response.json())
+  .then((data) => resolve(data))
+  .catch(reject);
+});
+//GET POST BY CATEGORY ID x
+export const getPostsByCategory = (id) => new Promise ((resolve, reject) => {
+  fetch(`${endpoint}/posts/categories/${id}`, {
+    method: "GET", 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  })
+  .then((response) => response.json())
+  .then((data) => resolve(data))
+  .catch(reject);
+});
+//GET POST BY TAGS ID
+export const getPostsByTags = (id) => new Promise ((resolve, reject) => {
+  fetch(`${endpoint}/posts/tags/${id}`, {
+    method: "GET", 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  })
+  .then((response) => response.json())
+  .then((data) => resolve(data))
+  .catch(reject);
+});
+//GET POST BY USER ID
+export const getPostsByUsers = (id) => new Promise ((resolve, reject) => {
+  fetch(`${endpoint}/posts/users/${id}`, {
+    method: "GET", 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  })
+  .then((response) => response.json())
+  .then((data) => resolve(data))
+  .catch(reject);
+});
+
+
 const createPost = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/posts`, {
     method: 'POST',
