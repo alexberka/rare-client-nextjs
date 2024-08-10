@@ -22,7 +22,7 @@ export default function PostForm({ postObj }) {
   const router = useRouter();
 
   useEffect(() => {
-    setFormData(postObj);
+    if (postObj.id) setFormData(postObj);
   }, [postObj]);
 
   useEffect(() => {
