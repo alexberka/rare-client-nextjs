@@ -1,9 +1,11 @@
 import React from 'react';
+import PostDetails from '../../components/PostDetails';
+import { getSinglePost } from '../../api/postData';
 
-export default function PostDetails() {
+export default function ViewPostDetails() {
   return (
     <div>
-      Post Details
+      <PostDetails onUpdate={getSinglePost} />
     </div>
   );
 }
