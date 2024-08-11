@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Card from 'react-bootstrap/Card';
+import { Card, Button, Badge } from 'react-bootstrap';
 import Link from 'next/link';
-import Button from 'react-bootstrap/Button';
 import { getUserById } from '../api/userData';
 import { getSingleCategory } from '../api/categoryData';
 import { deletePost } from '../api/postData';
@@ -25,6 +24,9 @@ export default function PostCard({ postObj, onUpdate }) {
     }
   };
 
+  const newDate = new Date(postObj.publicationDate);
+  const readableDate = newDate.toUTCString();
+
   useEffect(() => {
     getUser();
     getCategory();
@@ -42,7 +44,10 @@ export default function PostCard({ postObj, onUpdate }) {
             {user?.firstName} {user?.lastName}
           </Card.Subtitle>
           <Card.Text>{category?.label}</Card.Text>
-          <Card.Text>{postObj.publicationDate}</Card.Text>
+          <Card.Text>{readableDate}</Card.Text>
+          {postObj.tags?.map((tag) => (
+            <Badge bg="info">{tag.label}</Badge>
+          ))}
           <div className="d-flex flex-column align-items-center ml-auto">
             <Link href={`/post/edit/${postObj.id}`} passHref>
               <Button
@@ -82,6 +87,7 @@ PostCard.propTypes = {
     title: PropTypes.string,
     publicationDate: PropTypes.string,
     id: PropTypes.number,
+    tags: PropTypes.shape([]),
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };

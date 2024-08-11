@@ -19,6 +19,9 @@ export default function PostDetails({ onUpdate }) {
     }
   };
 
+  const newDate = new Date(postDetails.publicationDate);
+  const readableDate = newDate.toUTCString();
+
   useEffect(() => {
     getSinglePost(id).then(setPostDetails);
   }, [id]);
@@ -30,7 +33,7 @@ export default function PostDetails({ onUpdate }) {
           <Badge bg="secondary">
             {postDetails.user?.firstName} {postDetails.user?.lastName}
           </Badge>
-          <Card.Text bg="secondary">{postDetails.publicationDate}</Card.Text>
+          <Card.Text bg="secondary">{postDetails ? readableDate : ''}</Card.Text>
           <Card.Title>{postDetails?.title}</Card.Title>
           <Card.Text>{postDetails?.content}</Card.Text>
           <Badge bg="primary">{postDetails.category?.label}</Badge>
