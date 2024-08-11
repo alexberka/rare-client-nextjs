@@ -11,27 +11,30 @@ export default function AllUsers() {
   }, []);
 
   return (
-    <Table>
-      <thead>
-        <tr>
-          <th>Username</th>
-          <th>First name</th>
-          <th>Last name</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody>
-        {users.map((u) => (
-          <tr key={`user-${u.id}`}>
-            <th scope="row">
-              <Link passHref href={`/user/${u.id}`}>{u.username}</Link>
-            </th>
-            <td>{u.firstName}</td>
-            <td>{u.lastName}</td>
-            <td>{u.email}</td>
+    <>
+      <h2 className="title">Users</h2>
+      <Table>
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Email</th>
           </tr>
-        ))}
-      </tbody>
-    </Table>
+        </thead>
+        <tbody>
+          {users.map((u) => (
+            <tr key={`user-${u.id}`}>
+              <th scope="row">
+                <Link passHref href={`/user/${u.id}`}>{u.username}</Link>
+              </th>
+              <td>{u.firstName}</td>
+              <td>{u.lastName}</td>
+              <td>{u.email}</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </>
   );
 }

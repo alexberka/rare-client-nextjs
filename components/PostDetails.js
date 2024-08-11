@@ -21,8 +21,7 @@ export default function PostDetails({ onUpdate }) {
 
   useEffect(() => {
     getSinglePost(id).then(setPostDetails);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [id]);
 
   return (
     <div className="flex flex-col">
@@ -31,10 +30,13 @@ export default function PostDetails({ onUpdate }) {
           <Badge bg="secondary">
             {postDetails.user?.firstName} {postDetails.user?.lastName}
           </Badge>
+          <Card.Text bg="secondary">{postDetails.publicationDate}</Card.Text>
           <Card.Title>{postDetails?.title}</Card.Title>
           <Card.Text>{postDetails?.content}</Card.Text>
-          <Badge bg="secondary">{postDetails.category?.label}</Badge>
-          <Badge bg="secondary">{postDetails.publicationDate}</Badge>
+          <Badge bg="primary">{postDetails.category?.label}</Badge>
+          {postDetails.tags?.map((t) => (
+            <Badge bg="info">{t.label}</Badge>
+          ))}
           <div className="">
             <Link href={`/post/edit/${postDetails.id}`} passHref>
               <Button
