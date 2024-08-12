@@ -22,6 +22,9 @@ function AppNavBar() {
             <Link passHref href="/">
               <Nav.Link className="nav-link">Posts</Nav.Link>
             </Link>
+            <Link passHref href="/post/new">
+              <Nav.Link>New Post</Nav.Link>
+            </Link>
             <Link passHref href="/users">
               <Nav.Link className="nav-link">User Manager</Nav.Link>
             </Link>
