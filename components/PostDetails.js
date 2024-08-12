@@ -11,7 +11,7 @@ export default function PostDetails({ onUpdate }) {
   const { id } = router.query;
 
   const deleteThisPost = () => {
-    if (window.confirm('Delete?')) {
+    if (window.confirm(`Are you sure you want to delete ${postDetails.title}?`)) {
       deletePost(postDetails.id).then(() => {
         onUpdate();
         router.push('/');
@@ -28,7 +28,7 @@ export default function PostDetails({ onUpdate }) {
 
   return (
     <div className="flex flex-col">
-      <Card className="post-details ms-5">
+      <Card className="post-details">
         <Card.Body>
           <Badge bg="secondary">
             {postDetails.user?.firstName} {postDetails.user?.lastName}
@@ -36,10 +36,12 @@ export default function PostDetails({ onUpdate }) {
           <Card.Text bg="secondary">{postDetails ? readableDate : ''}</Card.Text>
           <Card.Title>{postDetails?.title}</Card.Title>
           <Card.Text>{postDetails?.content}</Card.Text>
-          <Badge bg="primary">{postDetails.category?.label}</Badge>
-          {postDetails.tags?.map((t) => (
-            <Badge bg="info">{t.label}</Badge>
-          ))}
+          <Badge bg="primary" style={{ marginBottom: '5px' }}>{postDetails.category?.label}</Badge>
+          <div className="post-card-tags-container flex">
+            {postDetails.tags?.map((t) => (
+              <Badge bg="info">{t.label}</Badge>
+            ))}
+          </div>
           <div className="">
             <Link href={`/post/edit/${postDetails.id}`} passHref>
               <Button

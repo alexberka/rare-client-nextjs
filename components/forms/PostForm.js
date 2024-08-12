@@ -168,7 +168,7 @@ export default function PostForm({ postObj }) {
         options={tags.map((tag) => ({ value: tag.id, label: tag.label }))}
       />
 
-      <button type="submit">{postObj.id ? 'Update Post' : 'Create Post'}</button>
+      <button className="btn btn-outline btn-primary" type="submit">{postObj.id ? 'Update Post' : 'Create Post'}</button>
     </Form>
   );
 }

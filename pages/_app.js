@@ -11,7 +11,9 @@ function MyApp({ Component, pageProps }) {
     <>
       <SSRProvider>
         <NavBar />
-        <Component {...pageProps} />
+        <div className="app-container">
+          <Component {...pageProps} />
+        </div>
       </SSRProvider>
     </>
   );

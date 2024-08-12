@@ -21,7 +21,7 @@ export default function UserDetails() {
   }
 
   return (
-    <>
+    <div className="table-container">
       <h2 className="title">User details</h2>
       <Table>
         <tbody>
@@ -48,6 +48,6 @@ export default function UserDetails() {
           <PostCard key={post.id} postObj={post} onUpdate={getPostsByUsers} />
         ))}
       </div>
-    </>
+    </div>
   );
 }

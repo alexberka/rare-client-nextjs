@@ -11,7 +11,7 @@ export default function AllUsers() {
   }, []);
 
   return (
-    <>
+    <div className="table-container">
       <h2 className="title">Users</h2>
       <Table>
         <thead>
@@ -25,7 +25,7 @@ export default function AllUsers() {
         <tbody>
           {users.map((u) => (
             <tr key={`user-${u.id}`}>
-              <th scope="row">
+              <th scope="row" className="user-name">
                 <Link passHref href={`/user/${u.id}`}>{u.username}</Link>
               </th>
               <td>{u.firstName}</td>
@@ -35,6 +35,6 @@ export default function AllUsers() {
           ))}
         </tbody>
       </Table>
-    </>
+    </div>
   );
 }

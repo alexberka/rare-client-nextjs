@@ -11,7 +11,7 @@ export default function TagRow({ tagObj, onUpdate }) {
     <tr>
       <th>{tagObj.label}</th>
       <td>
-        <button type="submit" className="btn btn-outline btn-accent btn-xs" onClick={deleteThisTag}>
+        <button type="submit" className="btn btn-outline btn-accent btn-xs remove-tag-btn" onClick={deleteThisTag}>
           REMOVE
         </button>
       </td>

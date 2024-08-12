@@ -1,38 +1,38 @@
-import Image from 'next/image';
 import Link from 'next/link';
 // import { useRouter } from 'next/router';
 // import PropTypes from 'prop-types';
-import { Container, Nav, Navbar } from 'react-bootstrap';
-import Logo from './rare.jpeg';
+import {
+  Container, Nav, Navbar, Image,
+} from 'react-bootstrap';
 
 function AppNavBar() {
   // const navigate = useRouter();
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="custom-navbar">
       <Container>
         <Link passHref href="/">
           <Navbar.Brand>
-            <Image src={Logo} height="3rem" alt="Rare Logo" /> <h1 className="title is-4">Rare Publishing</h1>
+            <Image src="/RARE_PUBLISHING-logo.png" layout="fill" alt="Rare Logo" width="140" height="60" />
           </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="ms-auto">
             <Link passHref href="/">
-              <Nav.Link>Posts</Nav.Link>
-            </Link>
-            <Link passHref href="/post/new">
-              <Nav.Link>New Post</Nav.Link>
+              <Nav.Link className="nav-link">Posts</Nav.Link>
             </Link>
             <Link passHref href="/users">
-              <Nav.Link>User Manager</Nav.Link>
+              <Nav.Link className="nav-link">User Manager</Nav.Link>
             </Link>
             <Link passHref href="/category-manager">
-              <Nav.Link>Category Manager</Nav.Link>
+              <Nav.Link className="nav-link">Category Manager</Nav.Link>
             </Link>
             <Link passHref href="/tag-manager">
-              <Nav.Link>Tag Manager</Nav.Link>
+              <Nav.Link className="nav-link">Tag Manager</Nav.Link>
+            </Link>
+            <Link passHref href="/post/new">
+              <button className="btn btn-outline btn-primary fw-400 publish-btn" type="button">Publish</button>
             </Link>
           </Nav>
         </Navbar.Collapse>

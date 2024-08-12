@@ -27,10 +27,10 @@ export default function CategoryForm({ onUpdate }) {
   };
 
   return (
-    <Form className="category-form" onSubmit={handleSubmit}>
+    <Form className="category-form form-container" onSubmit={handleSubmit}>
 
       {/* PET NAME INPUT  */}
-      <FloatingLabel controlId="floatingInput1" label="Category" className="mb-3 weight-input">
+      <FloatingLabel controlId="floatingInput1" label="Enter Category Name" className="mb-3 weight-input">
         <Form.Control
           type="string"
           placeholder="Enter Category Name"
