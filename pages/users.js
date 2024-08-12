@@ -11,7 +11,7 @@ export default function AllUsers() {
   }, []);
 
   return (
-    <>
+    <div className="table-container">
       <h2 className="title">Users</h2>
       <Table>
         <thead>
@@ -35,6 +35,6 @@ export default function AllUsers() {
           ))}
         </tbody>
       </Table>
-    </>
+    </div>
   );
 }

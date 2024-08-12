@@ -16,7 +16,7 @@ export default function TagManager() {
 
   return (
     <>
-      <div className="overflow-x-auto med-con-table">
+      <div className="overflow-x-auto med-con-table table-container">
         <h2 className="title">Tags</h2>
         <table className="table table-xs">
           <thead>

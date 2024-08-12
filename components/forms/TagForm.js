@@ -27,10 +27,10 @@ export default function TagForm({ onUpdate }) {
   };
 
   return (
-    <Form className="tag-form" onSubmit={handleSubmit}>
+    <Form className="tag-form form-container" onSubmit={handleSubmit}>
 
       {/* PET NAME INPUT  */}
-      <FloatingLabel controlId="floatingInput1" label="Tag" className="mb-3 weight-input">
+      <FloatingLabel controlId="floatingInput1" label="Enter Tag Name" className="mb-3 weight-input">
         <Form.Control
           type="string"
           placeholder="Enter Tag Name"
