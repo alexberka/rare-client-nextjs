@@ -32,7 +32,7 @@ function AppNavBar() {
               <Nav.Link className="nav-link">Tag Manager</Nav.Link>
             </Link>
             <Link passHref href="/post/new">
-              <button className="btn btn-outline btn-primary fw-400" type="button">Publish</button>
+              <button className="btn btn-outline btn-primary fw-400 publish-btn" type="button">Publish</button>
             </Link>
           </Nav>
         </Navbar.Collapse>

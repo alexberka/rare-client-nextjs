@@ -25,7 +25,7 @@ export default function AllUsers() {
         <tbody>
           {users.map((u) => (
             <tr key={`user-${u.id}`}>
-              <th scope="row">
+              <th scope="row" className="user-name">
                 <Link passHref href={`/user/${u.id}`}>{u.username}</Link>
               </th>
               <td>{u.firstName}</td>

@@ -28,7 +28,7 @@ export default function PostDetails({ onUpdate }) {
 
   return (
     <div className="flex flex-col">
-      <Card className="post-details ms-5">
+      <Card className="post-details">
         <Card.Body>
           <Badge bg="secondary">
             {postDetails.user?.firstName} {postDetails.user?.lastName}

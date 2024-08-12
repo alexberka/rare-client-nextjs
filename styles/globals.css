@@ -134,8 +134,15 @@ body {
 .dropdown-item.delete {
   color: red; /* Specific styling for the delete item to make text red */
 }
+
+.post-details{
+  margin: auto;
+}
+
 /* Posts page End */
 
+
+/* User, Category, Tag Start */
 .table {
   border-radius: 8px; 
   overflow: hidden; 
@@ -158,9 +165,14 @@ body {
   color: red;
 }
 
+.user-name:hover{
+  color: #0d6efd;
+}
+/* User, Category, Tag End */
+
+
 
 /* Navbar Start */
-
 .navbar{
   background-color: #ffffff92;
   .nav-link{
@@ -192,4 +204,7 @@ body {
   border-radius: 0.25rem;
 }
 
+.publish-btn:hover{
+ background-color: #0e54be;
+}
 /* Navbar Ends */
